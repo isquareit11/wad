@@ -1,8 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Admin Dashboard</title>
 
@@ -11,41 +9,42 @@
 <style>
 
 body{
-    overflow-x:hidden;
-    background:#f4f4f4;
+    background-color:rgb(210, 195, 198);
 }
 
 .sidebar{
-    width:240px;
+    width:220px;
     height:100vh;
-    background:#212529;
+    background-color:#343a40;
     position:fixed;
-    top:0;
-    left:0;
     padding-top:20px;
 }
 
 .sidebar h2{
     color:white;
     text-align:center;
-    margin-bottom:30px;
+    margin-bottom:20px;
 }
 
-.sidebar .nav-link{
+.sidebar a{
+    display:block;
     color:white;
-    padding:12px 20px;
-    border-radius:8px;
-    margin:5px 10px;
+    text-decoration:none;
+    padding:10px;
+    margin:5px;
 }
 
-.sidebar .nav-link:hover{
-    background:#0d6efd;
-    color:white;
+.sidebar a:hover{
+    background-color:blue;
 }
 
 .content{
-    margin-left:240px;
-    padding:30px;
+    margin-left:230px;
+    padding:20px;
+}
+
+.card{
+    margin-bottom:20px;
 }
 
 .section{
@@ -60,32 +59,8 @@ body{
     display:block;
 }
 
-.dashboard-card{
-    transition:0.3s;
-}
-
-.dashboard-card:hover{
-    transform:translateY(-5px);
-}
-
-.table-container{
-    background:white;
-    padding:20px;
-    border-radius:12px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.1);
-}
-
-@media(max-width:768px){
-
-    .sidebar{
-        width:100%;
-        height:auto;
-        position:relative;
-    }
-
-    .content{
-        margin-left:0;
-    }
+table{
+    background-color:white;
 }
 
 </style>
@@ -95,140 +70,130 @@ body{
 <body>
 
 <div class="sidebar">
+
     <h2>Dashboard</h2>
 
-    <nav class="nav flex-column">
-        <a class="nav-link" href="#home">Home</a>
-        <a class="nav-link" href="#students">Students</a>
-        <a class="nav-link" href="#courses">Courses</a>
-        <a class="nav-link" href="#exams">Exams</a>
-    </nav>
+    <a href="#home">Home</a>
+    <a href="#students">Students</a>
+    <a href="#courses">Courses</a>
+    <a href="#exams">Exams</a>
+
 </div>
 
 <div class="content">
 
     <div id="home" class="section">
 
-        <h1 class="mb-4">Home Dashboard</h1>
+        <h1>Home Page</h1>
 
-        <div class="row g-4">
+        <div class="row">
 
             <div class="col-md-4">
-                <div class="card dashboard-card shadow border-0 text-center p-3">
-                    <div class="card-body">
-                        <h5 class="card-title">Total Students</h5>
-                        <h2 class="text-primary">1200</h2>
-                    </div>
+
+                <div class="card p-3 text-center">
+
+                    <h4>Total Students</h4>
+                    <h2 class="text-primary">1200</h2>
+
                 </div>
+
             </div>
 
             <div class="col-md-4">
-                <div class="card dashboard-card shadow border-0 text-center p-3">
-                    <div class="card-body">
-                        <h5 class="card-title">Total Courses</h5>
-                        <h2 class="text-success">35</h2>
-                    </div>
+
+                <div class="card p-3 text-center">
+
+                    <h4>Total Courses</h4>
+                    <h2 class="text-success">35</h2>
+
                 </div>
+
             </div>
 
             <div class="col-md-4">
-                <div class="card dashboard-card shadow border-0 text-center p-3">
-                    <div class="card-body">
-                        <h5 class="card-title">Upcoming Exams</h5>
-                        <h2 class="text-danger">12</h2>
-                    </div>
+
+                <div class="card p-3 text-center">
+
+                    <h4>Total Exams</h4>
+                    <h2 class="text-danger">12</h2>
+
                 </div>
+
             </div>
 
         </div>
+
     </div>
 
     <div id="students" class="section">
 
-        <h1 class="mb-4">Students Section</h1>
+        <h1>Students</h1>
 
-        <div class="table-container">
+        <table class="table table-bordered">
 
-            <table class="table table-striped table-hover">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Course</th>
+            </tr>
 
-                <thead class="table-primary">
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Course</th>
-                    </tr>
-                </thead>
+            <tr>
+                <td>101</td>
+                <td>Rahul</td>
+                <td>BCA</td>
+            </tr>
 
-                <tbody>
-                    <tr>
-                        <td>101</td>
-                        <td>Rahul</td>
-                        <td>BCA</td>
-                    </tr>
+            <tr>
+                <td>102</td>
+                <td>Priya</td>
+                <td>MCA</td>
+            </tr>
 
-                    <tr>
-                        <td>102</td>
-                        <td>Priya</td>
-                        <td>MCA</td>
-                    </tr>
-                </tbody>
+        </table>
 
-            </table>
-
-        </div>
     </div>
 
     <div id="courses" class="section">
 
-        <h1 class="mb-4">Courses Section</h1>
+        <h1>Courses</h1>
 
-        <div class="card shadow border-0 p-4">
+        <ul class="list-group">
 
-            <ul class="list-group">
-                <li class="list-group-item">BCA</li>
-                <li class="list-group-item">MCA</li>
-                <li class="list-group-item">BSc IT</li>
-                <li class="list-group-item">MBA</li>
-            </ul>
+            <li class="list-group-item">BCA</li>
+            <li class="list-group-item">MCA</li>
+            <li class="list-group-item">MBA</li>
+            <li class="list-group-item">BSc IT</li>
 
-        </div>
+        </ul>
+
     </div>
 
     <div id="exams" class="section">
 
-        <h1 class="mb-4">Exam Section</h1>
+        <h1>Exams</h1>
 
-        <div class="table-container">
+        <table class="table table-bordered">
 
-            <table class="table table-bordered table-hover">
+            <tr>
+                <th>Exam</th>
+                <th>Date</th>
+            </tr>
 
-                <thead class="table-dark">
-                    <tr>
-                        <th>Exam Name</th>
-                        <th>Date</th>
-                    </tr>
-                </thead>
+            <tr>
+                <td>Semester 1</td>
+                <td>10 May 2026</td>
+            </tr>
 
-                <tbody>
-                    <tr>
-                        <td>Semester 1</td>
-                        <td>10 May 2026</td>
-                    </tr>
+            <tr>
+                <td>Semester 2</td>
+                <td>25 May 2026</td>
+            </tr>
 
-                    <tr>
-                        <td>Semester 2</td>
-                        <td>25 May 2026</td>
-                    </tr>
-                </tbody>
+        </table>
 
-            </table>
-
-        </div>
     </div>
 
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
