@@ -1,0 +1,15 @@
+sudo apt update
+sudo apt install docker.io -y
+docker -v
+sudo docker images
+sudo docker pull python
+sudo docker images
+sudo docker run -it --name py python
+a=10
+b=10
+sum=a+b
+print(sum)
+exit()
+sudo docker ps -a
+sudo docker rm py
+sudo docker rmi python
