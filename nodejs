@@ -1,0 +1,18 @@
+vs code:
+npm init -y
+npm i express
+npm i nodejs npm -y
+//create folder:public:file:index.html
+create file in main proj:server.js
+inside server.js:
+
+const express=require('express');
+const app=express();
+app.use(express.static('public'));
+app.listen(4000,'0.0.0.0',()=>{
+console.log('port 4000 running');
+})
+
+node server.js
+
+use amplify github
